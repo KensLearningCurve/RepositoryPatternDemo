@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/RepositoryPatternDemo.Api/bin/Debug/net7.0
+/RepositoryPatternDemo.Api/obj
+/RepositoryPatternDemo.Business/bin/Debug/net7.0
+/RepositoryPatternDemo.Business/obj
+/RepositoryPatternDemo.Domain/obj
+/RepositoryPatternDemo.Domain/bin/Debug/net7.0
