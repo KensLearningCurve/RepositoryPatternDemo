@@ -9,3 +9,5 @@
 /RepositoryPatternDemo.Business/obj
 /RepositoryPatternDemo.Domain/obj
 /RepositoryPatternDemo.Domain/bin/Debug/net7.0
+/RepositoryPatternDemo.Business.Tests/obj
+/RepositoryPatternDemo.Business.Tests/bin
