@@ -1,23 +1,24 @@
-﻿using RepositoryPatternDemo.Domain.Entities;
+﻿using RepositoryPatternDemo.Business.Repositories;
+using RepositoryPatternDemo.Domain.Entities;
 using RepositoryPatternDemo.Domain.Interfaces;
 
 namespace RepositoryPatternDemo.Business;
 
 public class GenreService : IGenreService
 {
-    private readonly DataContext context;
+    private readonly IGenreRepository genreRepository;
 
-    public GenreService(DataContext context)
+    public GenreService(IGenreRepository genreRepository)
     {
-        this.context=context;
+        this.genreRepository=genreRepository;
     }
 
     public void Create(Genre genre)
     {
         if (genre==null) throw new ArgumentNullException(nameof(genre));
 
-        context.Genres.Add(genre);
-        context.SaveChanges();
+        genreRepository.Create(genre);
+        genreRepository.SaveChanges();
     }
 
     public void Delete(int id)
