@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RepositoryPatternDemo.Business.Repositories;
 using RepositoryPatternDemo.Domain.Entities;
 using RepositoryPatternDemo.Domain.Interfaces;
 
@@ -6,50 +7,41 @@ namespace RepositoryPatternDemo.Business;
 
 public class MovieService : IMovieService
 {
-    private readonly DataContext context;
+    private readonly IMovieRepository movieRepository;
+    private readonly IGenreRepository genreRepository;
 
-    public MovieService(DataContext context)
+    public MovieService(IMovieRepository movieRepository, IGenreRepository genreRepository)
     {
-        this.context=context;
+        this.movieRepository=movieRepository;
+        this.genreRepository=genreRepository;
     }
 
     public void Create(Movie movie)
     {
         if (movie==null) throw new ArgumentNullException(nameof(movie));
 
-        Genre selectedGenre = context.Genres.SingleOrDefault(x => x.Id == movie.GenreId) ?? throw new Exception("Genre not found");
+        Genre selectedGenre = genreRepository.Get(movie.GenreId) ?? throw new Exception("Genre not found");
 
         movie.Genre = selectedGenre;
 
-        context.Movies.Add(movie);
-        context.SaveChanges();
+        movieRepository.Create(movie);    
     }
 
     public void Delete(int id)
     {
         if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
 
-        Movie found = context?.Movies.SingleOrDefault(x => x.Id == id) ?? throw new Exception("Can't find movie to delete");
-
-        context.Movies.Remove(found);
-        context.SaveChanges();
+        movieRepository.Delete(id);
     }
 
-    public Movie? Get(int id) => context.Movies.Include(x => x.Genre).SingleOrDefault(x => x.Id == id) ?? null;
+    public Movie? Get(int id) => movieRepository.Get().Include(x => x.Genre).SingleOrDefault(x => x.Id == id) ?? null;
 
-    public IEnumerable<Movie> Get() => context.Movies;
+    public IEnumerable<Movie> Get() => movieRepository.Get();
 
-    public IEnumerable<Movie> Get(string query) => context.Movies.Include(x => x.Genre).Where(x => x.Title.Contains(query));
+    public IEnumerable<Movie> Get(string query) => movieRepository.Get().Include(x => x.Genre).Where(x => x.Title.Contains(query));
 
     public void Update(Movie movie)
     {
-        Movie found = context?.Movies.SingleOrDefault(x => x.Id == movie.Id) ?? throw new Exception("Can't find movie to delete");
-        Genre selectedGenre = context.Genres.SingleOrDefault(x => x.Id == movie.GenreId) ?? throw new Exception("Genre not found");
-
-        found.Title = movie.Title;
-        found.Genre = selectedGenre;
-        found.ReleaseDate = movie.ReleaseDate;
-
-        context.SaveChanges();
+        movieRepository.Update(movie);
     }
 }
