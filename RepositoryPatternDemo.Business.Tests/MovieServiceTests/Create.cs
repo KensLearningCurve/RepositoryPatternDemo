@@ -45,5 +45,4 @@ public class Create : MovieServiceBase
 
         mockMovieRepository.Verify(x => x.Create(It.IsAny<Movie>()), Times.Once());
     }
-
 }
