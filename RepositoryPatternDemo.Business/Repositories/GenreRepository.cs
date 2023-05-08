@@ -38,6 +38,11 @@ public class GenreRepository : IGenreRepository
         dataContext.Entry(genre).State = EntityState.Modified;
     }
 
+    public void SaveChanges()
+    {
+        dataContext.SaveChanges();
+    }
+
     protected virtual void Dispose(bool disposing)
     {
         if (!disposed)

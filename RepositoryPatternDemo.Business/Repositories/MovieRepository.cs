@@ -38,6 +38,11 @@ public class MovieRepository : IMovieRepository
         dataContext.Entry(movie).State = EntityState.Modified;
     }
 
+    public void SaveChanges()
+    {
+        dataContext.SaveChanges();
+    }
+
     protected virtual void Dispose(bool disposing)
     {
         if (!disposed)

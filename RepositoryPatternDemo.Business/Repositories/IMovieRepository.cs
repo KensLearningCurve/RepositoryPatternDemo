@@ -9,4 +9,5 @@ public interface IMovieRepository: IDisposable
     Movie? Get(int id);
     void Update(Movie movie);
     void Delete(int id);
+    void SaveChanges();
 }

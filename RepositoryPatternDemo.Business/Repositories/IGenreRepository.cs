@@ -9,4 +9,5 @@ public interface IGenreRepository: IDisposable
     Genre? Get(int id);
     void Update(Genre movie);
     void Delete(int id);
+    void SaveChanges();
 }
