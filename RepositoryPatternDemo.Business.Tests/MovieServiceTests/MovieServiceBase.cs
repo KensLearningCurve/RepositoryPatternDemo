@@ -1,7 +1,8 @@
 ﻿using Moq;
+using RepositoryPatternDemo.Business;
 using RepositoryPatternDemo.Business.Repositories;
 
-namespace RepositoryPatternDemo.Business.Tests.MovieServiceTests;
+namespace MovieServiceTests;
 
 public class MovieServiceBase
 {

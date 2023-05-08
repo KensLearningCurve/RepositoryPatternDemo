@@ -1,14 +1,14 @@
 ﻿using Moq;
 using RepositoryPatternDemo.Domain.Entities;
 
-namespace RepositoryPatternDemo.Business.Tests.MovieServiceTests
+namespace MovieServiceTests
 {
     public class Update : MovieServiceBase
     {
         [Fact]
         public void Should_UpdateMovie()
         {
-            classUnderTest.Update(new Domain.Entities.Movie()
+            classUnderTest.Update(new Movie()
             {
                 GenreId = 1,
                 Id = 1,

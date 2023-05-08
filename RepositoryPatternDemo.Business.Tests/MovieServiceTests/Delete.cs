@@ -1,6 +1,6 @@
 ﻿using Moq;
 
-namespace RepositoryPatternDemo.Business.Tests.MovieServiceTests;
+namespace MovieServiceTests;
 public class Delete : MovieServiceBase
 {
     [Fact]

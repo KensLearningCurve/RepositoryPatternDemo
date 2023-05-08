@@ -1,6 +1,6 @@
 ﻿using RepositoryPatternDemo.Domain.Entities;
 
-namespace RepositoryPatternDemo.Business.Tests.MovieServiceTests
+namespace MovieServiceTests
 {
     public class Get : MovieServiceBase
     {
