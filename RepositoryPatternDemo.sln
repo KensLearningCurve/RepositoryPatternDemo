@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33620.401
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryPatternDemo.Api", "RepositoryPatternDemo.Api\RepositoryPatternDemo.Api.csproj", "{3D57CF92-4B5F-43E0-82C1-46EB76122FFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryPatternDemo.Api", "RepositoryPatternDemo.Api\RepositoryPatternDemo.Api.csproj", "{3D57CF92-4B5F-43E0-82C1-46EB76122FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryPatternDemo.Business", "RepositoryPatternDemo.Business\RepositoryPatternDemo.Business.csproj", "{A8877795-4674-4E9E-8A64-55DB7F71E957}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryPatternDemo.Business", "RepositoryPatternDemo.Business\RepositoryPatternDemo.Business.csproj", "{A8877795-4674-4E9E-8A64-55DB7F71E957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryPatternDemo.Domain", "RepositoryPatternDemo.Domain\RepositoryPatternDemo.Domain.csproj", "{342A0ECE-644D-4EFA-8818-B71E4F6DB0DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryPatternDemo.Domain", "RepositoryPatternDemo.Domain\RepositoryPatternDemo.Domain.csproj", "{342A0ECE-644D-4EFA-8818-B71E4F6DB0DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryPatternDemo.Business.Tests", "RepositoryPatternDemo.Business.Tests\RepositoryPatternDemo.Business.Tests.csproj", "{FCB991C1-BC63-41D7-A63C-845AA5330881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{342A0ECE-644D-4EFA-8818-B71E4F6DB0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{342A0ECE-644D-4EFA-8818-B71E4F6DB0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{342A0ECE-644D-4EFA-8818-B71E4F6DB0DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB991C1-BC63-41D7-A63C-845AA5330881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB991C1-BC63-41D7-A63C-845AA5330881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB991C1-BC63-41D7-A63C-845AA5330881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB991C1-BC63-41D7-A63C-845AA5330881}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
