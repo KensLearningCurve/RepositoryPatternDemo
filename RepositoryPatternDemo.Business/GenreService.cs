@@ -25,9 +25,7 @@ public class GenreService : IGenreService
     {
         if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
 
-        Genre found = context?.Genres.SingleOrDefault(x => x.Id == id) ?? throw new Exception("Can't find genre to delete");
-
-        context.Genres.Remove(found);
-        context.SaveChanges();
+        genreRepository.Delete(id);
+        genreRepository.SaveChanges();
     }
 }

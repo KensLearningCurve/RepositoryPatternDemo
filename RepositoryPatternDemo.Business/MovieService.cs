@@ -24,7 +24,8 @@ public class MovieService : IMovieService
 
         movie.Genre = selectedGenre;
 
-        movieRepository.Create(movie);    
+        movieRepository.Create(movie);
+        movieRepository.SaveChanges();
     }
 
     public void Delete(int id)
@@ -32,6 +33,7 @@ public class MovieService : IMovieService
         if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
 
         movieRepository.Delete(id);
+        movieRepository.SaveChanges();
     }
 
     public Movie? Get(int id) => movieRepository.Get().Include(x => x.Genre).SingleOrDefault(x => x.Id == id) ?? null;
@@ -43,5 +45,6 @@ public class MovieService : IMovieService
     public void Update(Movie movie)
     {
         movieRepository.Update(movie);
+        movieRepository.SaveChanges();
     }
 }
